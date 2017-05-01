@@ -8,6 +8,7 @@ var excludes: [String] = [
 ]
 
 if let raw = getenv("TEST"), String(validatingUTF8: raw) != nil {
+  print("HELLO!!")
   if let i = excludes.index(of: "Sources/RxTest") {
     excludes.remove(at: i)
   }
