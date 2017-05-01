@@ -4,11 +4,11 @@ import PackageDescription
 import Foundation
 
 var targets = [
-  Target(name: "TestLibA")
+  Target(name: "TestLibA", dependencies: [])
 ]
 
 // if let raw = getenv("TEST"), String(validatingUTF8: raw) != nil {
-//   targets.append(Target(name: "TestLibB"))
+//   targets.append(Target(name: "TestLibB", dependencies: []))
 // }
 
 let package = Package(
