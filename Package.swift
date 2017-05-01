@@ -3,21 +3,17 @@
 import PackageDescription
 import Foundation
 
-var targets = [
-  Target(name: "TestLibA")
+var excludes: [String] = [
+  "Sources/RxTest"
 ]
 
 if let raw = getenv("TEST"), String(validatingUTF8: raw) != nil {
-  let target = Target(
-    name: "TestLibB",
-    dependencies: [
-      .Target(name: "TestLibA"),
-    ]
-  )
-  targets.append(target)
+  if let i = excludes.index(of: "Sources/RxTest") {
+    excludes.remove(at: i)
+  }
 }
 
 let package = Package(
   name: "TestLib",
-  targets: targets
+  exclude: excludes
 )
