@@ -4,7 +4,7 @@ import PackageDescription
 import Foundation
 
 var targets = [
-  Target(name: "TestLibA", dependencies: [])
+  Target(name: "TestLibA")
 ]
 
 // if let raw = getenv("TEST"), String(validatingUTF8: raw) != nil {
