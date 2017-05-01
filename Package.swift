@@ -13,5 +13,7 @@ var targets = [
 
 let package = Package(
   name: "TestLib",
-  targets: targets
+  targets: [
+    Target(name: "TestLibA", dependencies: [])
+  ]
 )
