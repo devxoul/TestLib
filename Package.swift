@@ -1,14 +1,13 @@
 // swift-tools-version:3.1
 
 import PackageDescription
-import Foundation
+import Darwin
 
 var excludes: [String] = [
   "Sources/RxTest"
 ]
 
-if let raw = getenv("TEST"), String(validatingUTF8: raw) != nil {
-  print("HELLO!!")
+if getenv("TEST") != nil {
   if let i = excludes.index(of: "Sources/RxTest") {
     excludes.remove(at: i)
   }
